@@ -7,6 +7,7 @@
 //
 
 #import "LetraBViewController.h"
+#import "DicionarioViewController.h"
 
 @implementation LetraBViewController
 
@@ -31,8 +32,11 @@
 }
 
 -(void)next:(id)sender {
-  // Continue com as proximas letras
-    
+    DicionarioViewController *proximo = [[DicionarioViewController alloc]
+                                 initWithNibName:nil
+                                 bundle:NULL];
+    [self.navigationController pushViewController:proximo
+                                         animated:YES];
 }
 
 
