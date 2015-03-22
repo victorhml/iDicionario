@@ -8,7 +8,8 @@
 
 #import "ClasseDicionario.h"
 
-@interface ClasseDicionario (){}
+@interface ClasseDicionario ()
+
 @end
 
 @implementation ClasseDicionario
@@ -33,10 +34,10 @@ static bool isFirstAccess = YES;
     if(self)
     {
         
-    if(cont == letras.count){
-        cont = 0;
-    }
-    letras = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z"];
+        if(cont == letras.count){
+            cont = 0;
+        }
+    letras = @[@"Aa",@"Bb",@"Cc",@"Dd",@"Ee",@"Ff",@"Gg",@"Hh",@"Ii",@"Jj",@"Kk",@"Ll",@"Mm",@"Nn",@"Oo",@"Pp",@"Qq",@"Rr",@"Ss",@"Tt",@"Uu",@"Vv",@"Ww",@"Xx",@"Yy",@"Zz"];
     imagens = @[@"abelha.png",@"bola.png",@"cachorro.png",@"dado.png",@"elefante.png",@"flor.png",@"gato.png",@"helicoptero.png",@"indio.png",@"jornal.png",@"kart.png",@"livro.png",@"maca.png",@"nuvem.png",@"oculos.png",@"pato.png",@"queijo.png",@"rato.png",@"sapo.png",@"tomate.png",@"uva.png",@"vaca.png",@"wafer.png",@"xicara.png",@"yakult.png",@"zebra.png"];
     palavras = @[@"Abelha",@"Bola",@"Cachorro",@"Dado",@"Elefante",@"Flor",@"Gato",@"Helicóptero",@"Índio",@"Jornal",@"Kart",@"Livro",@"Maçã",@"Nuvem",@"Óculos",@"Pato",@"Queijo",@"Rato",@"Sapo",@"Tomate",@"Uva",@"Vaca",@"Wafer",@"Xícara",@"Yakult",@"Zebra"];
     }

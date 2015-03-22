@@ -21,6 +21,8 @@
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		D49B2E4A1AB74CD600996503 /* DicionarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B2E491AB74CD600996503 /* DicionarioViewController.m */; };
 		D49B2E4D1AB76D9600996503 /* ClasseDicionario.m in Sources */ = {isa = PBXBuildFile; fileRef = D49B2E4C1AB76D9600996503 /* ClasseDicionario.m */; };
+		D4D5D84B1ABF1B1F002EB409 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D5D84A1ABF1B1F002EB409 /* Realm.framework */; };
+		D4DA29A31ABB482D00949A0A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA29A21ABB482D00949A0A /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		D49B2E491AB74CD600996503 /* DicionarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicionarioViewController.m; sourceTree = "<group>"; };
 		D49B2E4B1AB76D9600996503 /* ClasseDicionario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClasseDicionario.h; sourceTree = "<group>"; };
 		D49B2E4C1AB76D9600996503 /* ClasseDicionario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClasseDicionario.m; sourceTree = "<group>"; };
+		D4D5D84A1ABF1B1F002EB409 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Downloads/realm-cocoa-0.91.1/ios/Realm.framework"; sourceTree = "<group>"; };
+		D4DA29A11ABB482D00949A0A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D4DA29A21ABB482D00949A0A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D5D84B1ABF1B1F002EB409 /* Realm.framework in Frameworks */,
 				27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */,
 				27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */,
 				27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */,
@@ -102,6 +108,7 @@
 		27156F4B18B76AF50053A99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4D5D84A1ABF1B1F002EB409 /* Realm.framework */,
 				27156F4C18B76AF50053A99C /* Foundation.framework */,
 				27156F4E18B76AF50053A99C /* CoreGraphics.framework */,
 				27156F5018B76AF50053A99C /* UIKit.framework */,
@@ -121,6 +128,8 @@
 				D49B2E4C1AB76D9600996503 /* ClasseDicionario.m */,
 				D49B2E481AB74CD600996503 /* DicionarioViewController.h */,
 				D49B2E491AB74CD600996503 /* DicionarioViewController.m */,
+				D4DA29A11ABB482D00949A0A /* TableViewController.h */,
+				D4DA29A21ABB482D00949A0A /* TableViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
+				D4DA29A31ABB482D00949A0A /* TableViewController.m in Sources */,
 				D49B2E4A1AB74CD600996503 /* DicionarioViewController.m in Sources */,
 				D49B2E4D1AB76D9600996503 /* ClasseDicionario.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
@@ -370,6 +380,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/victorhmlisboa/Downloads/realm-cocoa-0.91.1/ios",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";
@@ -383,6 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/victorhmlisboa/Downloads/realm-cocoa-0.91.1/ios",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";

@@ -9,25 +9,37 @@
 #import "MackenzieAppDelegate.h"
 #import "LetraAViewController.h"
 #import "DicionarioViewController.h"
+#import "TabController.h"
+#import "TableViewController.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    DicionarioViewController *viewController = [[DicionarioViewController alloc]
-                                           initWithNibName:nil
-                                           bundle:nil];
     
+    // UIViewController
+    DicionarioViewController *viewController = [[DicionarioViewController alloc] init];
     
-    self.navigationController = [[UINavigationController alloc]
+    // Navigation Controller do discionário
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:viewController];
+    
+    TableViewController *tbv = [[TableViewController alloc]init];
+
+    // Tabbar Principal
+    
+    UITabBarController *tb = [[UITabBarController alloc] init];
+    NSArray *view = [NSArray arrayWithObjects:navigationController ,tbv, nil];
+    [tb setViewControllers:view];
+    
+    // Preparação da janela principal do aplicativo
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
-
-
-    
+    [viewController setTitle:@"ABC"];
+    [tbv setTitle:@"Lista"];
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = tb;
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -12,8 +12,10 @@
 @interface DicionarioViewController : UIViewController
 
 @property UIImageView *imgView;
-@property UILabel *label;
-@property int scaleFactor;
-@property int angle;
+@property UITextField *label;
+@property CGFloat scaleFactor;
+@property CGFloat angle;
+@property CGPoint start;
 
+//@property (weak,nonatomic) IBOutlet UIToolbar *toolb;
 @end
