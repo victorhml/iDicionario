@@ -42,7 +42,7 @@
     self.navigationItem.leftBarButtonItem=back;
     
     // Configurando a palavra da Letra corrente
-    label = [[UITextField alloc]initWithFrame:CGRectMake(130, 450, 100, 30)];
+    label = [[UITextField alloc]initWithFrame:CGRectMake(130, 295, 100, 30)];
     label.text = [NSString stringWithFormat:@"%@", dic.palavras];
     label.enabled = NO;
     [label setText:[NSString stringWithFormat:@"%@",[dic.palavras objectAtIndex:dic.cont]]];
@@ -51,7 +51,7 @@
     label.textColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor darkGrayColor];
     
-    imgView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 100, 200, 200)];
+    imgView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 95, 200, 200)];
     [imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",[dic.imagens objectAtIndex:dic.cont]]]];
     [self.view addSubview:imgView];
     imgView.alpha = 0.0;
@@ -60,7 +60,7 @@
     self.imgView.clipsToBounds = YES;
     imgView.backgroundColor=[UIColor whiteColor];
     // Configuração dos botões da navigaton controller
-    UIToolbar *tool = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 490, 325, 30)];
+    UIToolbar *tool = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 63, 325, 30)];
     [self.view addSubview:tool];
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithTitle:@"Editar" style:UIBarButtonItemStylePlain target:self action:@selector(botaoEditar:)];
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithTitle:@"Concluir" style:UIBarButtonItemStylePlain target:self action:@selector(botaoDone:)];
@@ -126,12 +126,12 @@
     label.textColor = [UIColor whiteColor];
 }
 -(void)botaoDone: (id)sender{
+    
     label.enabled = NO;
     label.backgroundColor = [UIColor darkGrayColor];
     self.label.backgroundColor = [UIColor clearColor];
     self.parentViewController.view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
 }
-
 -(void)zoomImg:(UILongPressGestureRecognizer *)sender{
     if (sender.state == UIGestureRecognizerStateBegan) {
         imgView.transform = CGAffineTransformIdentity;

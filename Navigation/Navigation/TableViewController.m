@@ -60,7 +60,6 @@
     [cell.textLabel setText:[NSString stringWithFormat:@"%c",[[dic.palavras objectAtIndex:row]characterAtIndex:0]]];
     [cell.detailTextLabel setText:[dic.palavras objectAtIndex:row]];
     [cell.imageView setImage:[UIImage imageNamed: [dic.imagens objectAtIndex:row]]];
-    
     return cell;
 }
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle{
