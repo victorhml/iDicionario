@@ -59,7 +59,7 @@
     label.alpha = 0.0;
     label.textColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor darkGrayColor];
-    
+
     
     // Configuração dos botões da navigaton controller
     UIToolbar *tool = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 63, 325, 30)];
