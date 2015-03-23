@@ -41,6 +41,15 @@
                              initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem=back;
     
+    imgView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 95, 200, 200)];
+    [imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",[dic.imagens objectAtIndex:dic.cont]]]];
+    [self.view addSubview:imgView];
+    imgView.alpha = 0.0;
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    self.imgView.layer.cornerRadius = self.imgView.frame.size.width / 2;
+    self.imgView.clipsToBounds = YES;
+    imgView.backgroundColor=[UIColor whiteColor];
+    
     // Configurando a palavra da Letra corrente
     label = [[UITextField alloc]initWithFrame:CGRectMake(130, 295, 100, 30)];
     label.text = [NSString stringWithFormat:@"%@", dic.palavras];
@@ -51,14 +60,7 @@
     label.textColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor darkGrayColor];
     
-    imgView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 95, 200, 200)];
-    [imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",[dic.imagens objectAtIndex:dic.cont]]]];
-    [self.view addSubview:imgView];
-    imgView.alpha = 0.0;
-    self.view.backgroundColor = [UIColor darkGrayColor];
-    self.imgView.layer.cornerRadius = self.imgView.frame.size.width / 2;
-    self.imgView.clipsToBounds = YES;
-    imgView.backgroundColor=[UIColor whiteColor];
+    
     // Configuração dos botões da navigaton controller
     UIToolbar *tool = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 63, 325, 30)];
     [self.view addSubview:tool];
