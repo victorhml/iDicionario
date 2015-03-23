@@ -13,8 +13,6 @@
 
 @property UIImageView *imgView;
 @property UITextField *label;
-@property CGFloat scaleFactor;
-@property CGFloat angle;
 @property CGPoint start;
 
 //@property (weak,nonatomic) IBOutlet UIToolbar *toolb;

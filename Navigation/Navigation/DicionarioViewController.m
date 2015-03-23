@@ -17,7 +17,7 @@
 
 
 
-@synthesize imgView, label, angle, scaleFactor, start;
+@synthesize imgView, label, start;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,14 +67,6 @@
     UIBarButtonItem *camera = [[UIBarButtonItem alloc]initWithTitle:@"Camera" style:UIBarButtonItemStylePlain target:self action:@selector(tirarFoto:)];
     NSArray *editar = [[NSArray alloc]initWithObjects: button, done, camera, nil];
     [tool setItems:editar];
-
-    
-    
-    
-    // Configuração dos parâmetros de animação
-//    scaleFactor = 2;
-//    angle = 180;
-    
     
     self.tabBarController.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"ABC" image:[UIImage imageNamed:@"ABC"] tag:1];
     
@@ -88,56 +80,24 @@
     
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:3.0 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
         imgView.alpha = 1.0;
         label.alpha = 1.0;
-    }completion:^(BOOL finished){
-//        imgView.transform = CGAffineTransformIdentity;
-    }];
+    }completion:nil];
     
-    //    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-    //
-    //        CGAffineTransform scaleTrans = CGAffineTransformScale(imgView.transform,scaleFactor, scaleFactor);
-    //        CGAffineTransform rotateTrans = CGAffineTransformRotate(imgView.transform, M_PI);
-    //
-    //        imgView.transform = CGAffineTransformConcat(scaleTrans,rotateTrans);
-    //        scaleFactor = (scaleFactor == 2) ? 0.25 : 2;
-    //
-    //    } completion:^(BOOL finished){
-    //        [UIView animateKeyframesWithDuration:2.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-    //
-    //            CGAffineTransform rotateTrans = CGAffineTransformRotate(imgView.transform, M_PI);
-    //            imgView.transform = rotateTrans;
-    //        } completion:nil];
-    //    }];
+    [UIView animateWithDuration:3.0 delay:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        imgView.transform = CGAffineTransformMakeRotation(M_PI);
+    }completion:^(BOOL finished){
+        [UIView animateWithDuration:3.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            imgView.transform = CGAffineTransformMakeRotation(2*M_PI);
+        }completion:nil];
+    }];
 }
-//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-////    UITouch *touch = [touches anyObject];
-////    CGPoint local = [touch locationInView:self.view];
-//    
-//    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        
-//        CGAffineTransform scaleTrans = CGAffineTransformScale(imgView.transform,scaleFactor, scaleFactor);
-//        CGAffineTransform rotateTrans = CGAffineTransformRotate(imgView.transform, M_PI);
-//
-//        imgView.transform = CGAffineTransformConcat(scaleTrans,rotateTrans);
-//        scaleFactor = (scaleFactor == 2) ? 0.25 : 2;
-//        
-//    } completion:^(BOOL finished){
-//        [UIView animateKeyframesWithDuration:2.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            
-//            CGAffineTransform rotateTrans = CGAffineTransformRotate(imgView.transform, M_PI);
-//            imgView.transform = rotateTrans;
-//        } completion:nil];
-//    }];
-//
-//}
 -(void)next:(id)sender {
     ClasseDicionario *dic = [ClasseDicionario sharedInstance];
     dic.cont++;
     DicionarioViewController *proximo = [[DicionarioViewController alloc]initWithNibName:nil bundle:NULL];
-//    imgView.alpha = 0.0;
+    imgView.alpha = 0.0;
     label.alpha = 0.0;
     
     [self.navigationController pushViewController:proximo animated:NO];
@@ -145,7 +105,7 @@
 -(void)back:(id)sender{
     ClasseDicionario *dic = [ClasseDicionario sharedInstance];
     dic.cont--;
-//    imgView.alpha = 0.0;
+    imgView.alpha = 0.0;
     label.alpha = 0.0;
     //    DicionarioViewController *anterior = [[DicionarioViewController alloc]initWithNibName:nil bundle:NULL];
     [self.navigationController popViewControllerAnimated:NO];
